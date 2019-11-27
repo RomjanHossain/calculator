@@ -6,8 +6,12 @@ class Calculator:
         #img = PhotoImage(Image('mitch.jpg'))
     def __init__(self):
         display = Tk()
-        display.geometry('460x518')
+        #C = Canvas(display, bg='blue', height=460, width=518)
+
         img = PhotoImage('mitch.jpg')
+        display.geometry('460x518')
+
+        # img_l.image = img
         display.config(bg='white')
         display.title('Calculator')
         display.iconbitmap('calculator.ico')
@@ -20,13 +24,13 @@ class Calculator:
         entry.focus()
 
         values = [
-            "radians", ",", "log", "/", "%", "clear",
-            "AC", "sin", "asin", "cos", "*", "(",
-            ")", "**", "log10", "max", "abs", "-",
-            "7", "8", "9", ".", "min", "+",
-            "4", "5", "6", "acos", "tan()", "pow",
-            "1", "2", "3", "floor", "pi", "e",
-            "0", 'king', 'boss', "ceil", "degrees", "="
+            "radians", ",", "log", "tan()", "%", "clear",
+            "AC", "sin", "asin", "cos", "e", "(",
+            ")", "**", "log10", "max", "abs", "acos",
+            "7", "8", "9", "king", "min", "floor",
+            "4", "5", "6", "-", "/", "pow",
+            "1", "2", "3", "+", "*", "pi",
+            "0", '.', 'sqrt', "ceil", "degrees", "="
         ]
         text = 1
         i = 0
@@ -54,8 +58,10 @@ class Calculator:
                 row = 7
                 col = 0
             if txt == '=':
-                btn = Button(display, height=2, width=4, padx=padx, pady=pady,
-                             text=txt, command=lambda txt=txt: self.equals())
+                photo3 = PhotoImage(file="equal.png")
+                photosize3 = photo3.subsample(10, 10)
+                btn = Button(display, height=50, width=50, padx=padx, pady=pady,
+                             image=photosize3, command=lambda txt=txt: self.equals())
                 btn.grid(row=row, column=col, padx=1, pady=1)
                 btn.configure(background="yellow")
 
@@ -75,6 +81,36 @@ class Calculator:
                 btn = Button(display, width=50, height=50,
                              image=photosize, command=lambda txt=txt: self.addChar(txt))
                 btn.grid(row=row, column=col, padx=1, pady=1)
+            elif txt == '+':
+                photo1 = PhotoImage(file="plus.png")
+                photosize1 = photo1.subsample(10, 10)
+                btn = Button(display, width=50, height=50,
+                             image=photosize1, command=lambda txt=txt: self.addChar(txt))
+                btn.grid(row=row, column=col, padx=1, pady=1)
+            elif txt == '/':
+                photo2 = PhotoImage(file="division.png")
+                photosize2 = photo2.subsample(10, 10)
+                btn = Button(display, width=50, height=50,
+                             image=photosize2, command=lambda txt=txt: self.addChar(txt))
+                btn.grid(row=row, column=col, padx=1, pady=1)
+            elif txt == '%':
+                photo4 = PhotoImage(file="percentage.png")
+                photosize4 = photo4.subsample(10, 10)
+                btn = Button(display, width=50, height=50,
+                             image=photosize4, command=lambda txt=txt: self.addChar(txt))
+                btn.grid(row=row, column=col, padx=1, pady=1)
+            elif txt == 'sqrt':
+                photo5 = PhotoImage(file="square-root.png")
+                photosize5 = photo5.subsample(10, 10)
+                btn = Button(display, width=50, height=50,
+                             image=photosize5, command=lambda txt=txt: self.addChar(txt))
+                btn.grid(row=row, column=col, padx=1, pady=1)
+            elif txt == '**':
+                photo7 = PhotoImage(file="square2.png")
+                #photosize7 = photo7.subsample(10, 10)
+                btn = Button(display, width=50, height=50,
+                             image=photo7, command=lambda txt=txt: self.addChar(txt))
+                btn.grid(row=row, column=col, padx=1, pady=1)
             else:
                 btn = Button(display, height=2, width=4, padx=padx, pady=pady,
                              text=txt, command=lambda txt=txt: self.addChar(txt))
@@ -83,6 +119,10 @@ class Calculator:
 
             col += 1
             i += 1
+        # img = PhotoImage('mitch.jpg')
+        # img_l = Label(display, image=img)
+        # img_l.image = img
+        # img_l.place(x=0, y=0, relwidth=1, relheight=1)
         display.mainloop()
 
     def clearall(self):
