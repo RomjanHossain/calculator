@@ -16,7 +16,7 @@ from math import pi, e, sin, cos, tan, log, log10, ceil, degrees, radians, exp, 
 class Calculator:
     def __init__(self):
         display = Tk()
-        display.geometry('460x400')
+        display.geometry('460x518')
         display.config(bg='#C9EBE7')
         display.title('Calculator')
         display.iconbitmap('calculator.ico')
@@ -30,8 +30,8 @@ class Calculator:
 
         values = ["7", "8", "9", "/", "%", "clear", "AC",
                   "4", "5", "6", "*", "(", ")", "**",
-                  "1", "2", "3", "-", "=", ",", "0", ".", "min", "+", "sin", "asin", "cos", "acos", "tan()",
-                  "pow", "log10", "max", "abs", "floor", "pi", "e", "log", "ceil", "degrees", "radians"]
+                  "1", "2", "3", "-", "radians", ",", "0", ".", "min", "+", "sin", "asin", "cos", "acos", "tan()",
+                  "pow", "log10", "max", "abs", "floor", "pi", "e", "log",'king','boss', "ceil", "degrees", "="]
         text = 1
         i = 0
         row = 1
@@ -39,33 +39,36 @@ class Calculator:
         for txt in values:
             padx = 10
             pady = 10
-            if(i == 7):
+            if i == 6 :
                 row = 2
                 col = 0
-            if(i == 14):
+            if i == 12:
                 row = 3
                 col = 0
-            if(i == 19):
+            if i == 18 :
                 row = 4
                 col = 0
-            if(i == 26):
+            if i == 24 :
                 row = 5
                 col = 0
-            if(i == 33):
+            if i == 30 :
                 row = 6
                 col = 0
-            if(txt == '='):
-                btn = Button(display, height=2, width=4, padx=70, pady=pady,
+            if i ==36:
+            	row = 7
+            	col = 0
+            if txt == '=':
+                btn = Button(display, height=2, width=4, padx=padx, pady=pady,
                              text=txt, command=lambda txt=txt: self.equals())
-                btn.grid(row=row, column=col, columnspan=3, padx=2, pady=2)
+                btn.grid(row=row, column=col, padx=1, pady=1)
                 btn.configure(background="yellow")
 
-            elif(txt == 'clear'):
+            elif txt == 'clear' :
                 btn = Button(display, height=2, width=4, padx=padx, pady=pady,
                              text=txt, command=lambda txt=txt: self.delete())
                 btn.grid(row=row, column=col, padx=1, pady=1)
                 btn.configure(background="grey")
-            elif(txt == 'AC'):
+            elif txt == 'AC':
                 btn = Button(display, height=2, width=4, padx=padx, pady=pady,
                              text=txt, command=lambda txt=txt: self.clearall())
                 btn.grid(row=row, column=col, padx=1, pady=1)
@@ -74,10 +77,10 @@ class Calculator:
                 btn = Button(display, height=2, width=4, padx=padx, pady=pady,
                              text=txt, command=lambda txt=txt: self.addChar(txt))
                 btn.grid(row=row, column=col, padx=1, pady=1)
-                btn.configure(background="cyan")
+                btn.configure(background="lightblue")
 
-            col = col+1
-            i = i+1
+            col += 1
+            i += 1
         display.mainloop()
     def clearall(self):
         self.string.set("")
