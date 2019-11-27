@@ -48,6 +48,14 @@ class Calculator:
 		display.iconbitmap('calculator.ico')
 		display.resizable(width=True, height=True)
 
+		values = ["7", "8", "9", "/", "%", "clear", "AC",
+          "4", "5", "6", "*", "(", ")", "**",
+          "1", "2", "3", "-", "=", ",", "0", ".", "min", "+", "sin", "asin", "cos", "acos", "tan()",
+          "pow", "log10", "max", "abs", "floor", "pi", "e", "log", "ceil", "degrees", "radians"]
+		
+		i = 0
+		row = 1
+		col = 0
 
 		display.mainloop()		
 # display.iconname('calculator.png')
