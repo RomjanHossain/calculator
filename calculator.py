@@ -1,17 +1,6 @@
 from tkinter import *
-from math import pi, e, sin, cos, tan, log, log10, ceil, degrees, radians, exp, asin, acos, floor
+from math import *
 
-# some shit for title bar
-
-
-# doing some fucking things with display
-# display = Tk()
-# display.geometry('500x600')
-# display.config(bg='#C9EBE7')
-# display.title('king')
-# display.iconbitmap('calculator.ico')
-# display.resizable(width=True, height=True)
-# # display.iconname('calculator.png')
 
 class Calculator:
     def __init__(self):
@@ -28,10 +17,15 @@ class Calculator:
         entry.configure(background="white")
         entry.focus()
 
-        values = ["7", "8", "9", "/", "%", "clear", "AC",
-                  "4", "5", "6", "*", "(", ")", "**",
-                  "1", "2", "3", "-", "radians", ",", "0", ".", "min", "+", "sin", "asin", "cos", "acos", "tan()",
-                  "pow", "log10", "max", "abs", "floor", "pi", "e", "log",'king','boss', "ceil", "degrees", "="]
+        values = [
+        "radians", ",", "log", "/", "%", "clear",
+         "AC","sin", "asin", "cos", "*", "(",
+         ")", "**","log10", "max", "abs", "-",
+         "7", "8", "9", ".", "min", "+",
+         "4", "5", "6", "acos", "tan()","pow",
+         "1", "2", "3", "floor", "pi", "e",
+         "0",'king','boss', "ceil", "degrees", "="
+         ]
         text = 1
         i = 0
         row = 1
