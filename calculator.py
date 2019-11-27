@@ -3,10 +3,12 @@ from math import *
 
 
 class Calculator:
+        #img = PhotoImage(Image('mitch.jpg'))
     def __init__(self):
         display = Tk()
         display.geometry('460x518')
-        display.config(bg='#C9EBE7')
+        img = PhotoImage('mitch.jpg')
+        display.config(bg='white')
         display.title('Calculator')
         display.iconbitmap('calculator.ico')
         display.resizable(width=True, height=True)
@@ -68,11 +70,11 @@ class Calculator:
                 btn.grid(row=row, column=col, padx=1, pady=1)
                 btn.configure(background="red")
             elif txt == 'pi':
-            	photo=PhotoImage(file="pi2.png")
-            	photosize = photo.subsample(10,10)
-            	btn = Button(display,width=50,height=50,
+                photo = PhotoImage(file="pi.png")
+                photosize = photo.subsample(10, 10)
+                btn = Button(display, width=50, height=50,
                              image=photosize, command=lambda txt=txt: self.addChar(txt))
-            	btn.grid(row=row, column=col, padx=1, pady=1)
+                btn.grid(row=row, column=col, padx=1, pady=1)
             else:
                 btn = Button(display, height=2, width=4, padx=padx, pady=pady,
                              text=txt, command=lambda txt=txt: self.addChar(txt))
@@ -101,11 +103,10 @@ class Calculator:
 
     def delete(self):
         self.string.set(self.string.get()[0:-1])
-    def clickpi():
-    	self.pi
 # display.iconname('calculator.png')
 
 
 # running the display
+
 if __name__ == '__main__':
     Calculator()
