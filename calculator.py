@@ -152,7 +152,7 @@ class Calculator:
             result = eval(self.string.get())
             self.string.set(result)
         except:
-            result = "INVALID INPUT"
+            result = "Syntax Error"
         self.string.set(result)
 
     def addChar(self, char):
