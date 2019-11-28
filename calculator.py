@@ -12,7 +12,7 @@ class Calculator:
         display.geometry('460x518')
 
         # img_l.image = img
-        display.config(bg='white')
+        display.config(bg='black')
         display.title('Calculator')
         display.iconbitmap('calculator.ico')
         display.resizable(width=True, height=True)
@@ -58,12 +58,12 @@ class Calculator:
                 row = 7
                 col = 0
             if txt == '=':
-                photo3 = PhotoImage(file="equal.png")
-                photosize3 = photo3.subsample(10, 10)
-                btn = Button(display, height=50, width=50, padx=padx, pady=pady,
-                             image=photosize3, command=lambda txt=txt: self.equals())
+                #photo3 = PhotoImage(file="equal.png")
+                #photosize3 = photo3.subsample(10, 10)
+                btn = Button(display, height=2, width=4, padx=padx, pady=pady,
+                             text=txt, command=lambda txt=txt: self.equals())
                 btn.grid(row=row, column=col, padx=1, pady=1)
-                btn.configure(background="yellow")
+                btn.configure(background="blue")
 
             elif txt == 'clear':
                 btn = Button(display, height=2, width=4, padx=padx, pady=pady,
@@ -75,47 +75,14 @@ class Calculator:
                              text=txt, command=lambda txt=txt: self.clearall())
                 btn.grid(row=row, column=col, padx=1, pady=1)
                 btn.configure(background="red")
-            elif txt == 'pi':
-                photo = PhotoImage(file="pi.png")
-                photosize = photo.subsample(10, 10)
-                btn = Button(display, width=50, height=50,
-                             image=photosize, command=lambda txt=txt: self.addChar(txt))
-                btn.grid(row=row, column=col, padx=1, pady=1)
-            elif txt == '+':
-                photo1 = PhotoImage(file="plus.png")
-                photosize1 = photo1.subsample(10, 10)
-                btn = Button(display, width=50, height=50,
-                             image=photosize1, command=lambda txt=txt: self.addChar(txt))
-                btn.grid(row=row, column=col, padx=1, pady=1)
-            elif txt == '/':
-                photo2 = PhotoImage(file="division.png")
-                photosize2 = photo2.subsample(10, 10)
-                btn = Button(display, width=50, height=50,
-                             image=photosize2, command=lambda txt=txt: self.addChar(txt))
-                btn.grid(row=row, column=col, padx=1, pady=1)
-            elif txt == '%':
-                photo4 = PhotoImage(file="percentage.png")
-                photosize4 = photo4.subsample(10, 10)
-                btn = Button(display, width=50, height=50,
-                             image=photosize4, command=lambda txt=txt: self.addChar(txt))
-                btn.grid(row=row, column=col, padx=1, pady=1)
-            elif txt == 'sqrt':
-                photo5 = PhotoImage(file="square-root.png")
-                photosize5 = photo5.subsample(10, 10)
-                btn = Button(display, width=50, height=50,
-                             image=photosize5, command=lambda txt=txt: self.addChar(txt))
-                btn.grid(row=row, column=col, padx=1, pady=1)
-            elif txt == '**':
-                photo7 = PhotoImage(file="square2.png")
-                #photosize7 = photo7.subsample(10, 10)
-                btn = Button(display, width=50, height=50,
-                             image=photo7, command=lambda txt=txt: self.addChar(txt))
-                btn.grid(row=row, column=col, padx=1, pady=1)
+          
             else:
-                btn = Button(display, height=2, width=4, padx=padx, pady=pady,
+                btn = Button(display, height=2, width=4,
+                	font=("Helvetica", 15,"italic bold"),foreground='green',bg='green',
+                	 padx=padx, pady=pady,
                              text=txt, command=lambda txt=txt: self.addChar(txt))
                 btn.grid(row=row, column=col, padx=1, pady=1)
-                btn.configure(background="lightblue")
+                btn.configure(background="black")
 
             col += 1
             i += 1
