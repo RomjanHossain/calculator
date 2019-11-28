@@ -9,18 +9,18 @@ class Calculator:
         #C = Canvas(display, bg='blue', height=460, width=518)
 
         img = PhotoImage('mitch.jpg')
-        display.geometry('460x518')
+        display.geometry('470x692')
 
         # img_l.image = img
         display.config(bg='black')
         display.title('Calculator')
         display.iconbitmap('calculator.ico')
-        display.resizable(width=True, height=True)
+        display.resizable(width=False, height=False)
         self.string = StringVar()
         entry = Entry(display, font=("Helvetica", 18), textvariable=self.string, width=30, bd=30, insertwidth=4,
                       justify='right')
         entry.grid(row=0, column=0, columnspan=6)
-        entry.configure(background="#FF828E")
+        entry.configure(background="white")
         entry.focus()
 
         values = [
@@ -63,7 +63,7 @@ class Calculator:
                 btn = Button(display, height=2, width=4, padx=padx, pady=pady,
                              text=txt, command=lambda txt=txt: self.equals())
                 btn.grid(row=row, column=col, padx=1, pady=1)
-                btn.configure(background="blue")
+                btn.configure(background="#46D895")
 
             elif txt == 'clear':
                 btn = Button(display, height=2, width=4, padx=padx, pady=pady,
@@ -78,7 +78,7 @@ class Calculator:
           
             else:
                 btn = Button(display, height=2, width=4,
-                	font=("Helvetica", 15,"italic bold"),foreground='green',bg='green',
+                	font=("Helvetica", 15,"italic bold"),foreground='white',bg='green',
                 	 padx=padx, pady=pady,
                              text=txt, command=lambda txt=txt: self.addChar(txt))
                 btn.grid(row=row, column=col, padx=1, pady=1)
