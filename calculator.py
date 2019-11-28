@@ -24,13 +24,13 @@ class Calculator:
         entry.focus()
 
         values = [
-            "radians", ",", "log", "tan()", "%", "clear",
-            "AC", "sin", "asin", "cos", "e", "(",
-            ")", "**", "log10", "max", "abs", "acos",
-            "7", "8", "9", "king", "min", "floor",
+            "radians", "sqrt", "log", "tan()", "%", "AC",
+            "gamma", "sin", "asin", "cos", "e", "ceil",
+            "degrees", "**", "log10", "max", "abs", "acos",
+            "7", "8", "9", "clear", "min", "floor",
             "4", "5", "6", "-", "/", "pow",
             "1", "2", "3", "+", "*", "pi",
-            "0", '.', 'sqrt', "ceil", "degrees", "="
+            ".", '0', ',', "(", ")", "="
         ]
         text = 1
         i = 0
@@ -66,7 +66,7 @@ class Calculator:
                 btn.configure(background="#46D895")
 
             elif txt == 'clear':
-                btn = Button(display, height=2, width=4, padx=padx, pady=pady,
+                btn = Button(display, height=2, width=4,font=("Helvetica", 10), padx=padx, pady=pady,
                              text=txt, command=lambda txt=txt: self.delete())
                 btn.grid(row=row, column=col, padx=1, pady=1)
                 btn.configure(background="grey")
@@ -75,6 +75,66 @@ class Calculator:
                              text=txt, command=lambda txt=txt: self.clearall())
                 btn.grid(row=row, column=col, padx=1, pady=1)
                 btn.configure(background="red")
+            elif txt == '9':
+                btn = Button(display, height=2, width=4,
+                font=("Helvetica", 15,"italic bold"),foreground='white', padx=padx, pady=pady,
+                             text=txt, command=lambda txt=txt: self.addChar(txt))
+                btn.grid(row=row, column=col, padx=1, pady=1)
+                btn.configure(background="#999999")
+            elif txt == '8':
+                btn = Button(display, height=2, width=4,
+                font=("Helvetica", 15,"italic bold"),foreground='white', padx=padx, pady=pady,
+                             text=txt, command=lambda txt=txt: self.addChar(txt))
+                btn.grid(row=row, column=col, padx=1, pady=1)
+                btn.configure(background="#999999")
+            elif txt == '7':
+                btn = Button(display, height=2, width=4,
+                font=("Helvetica", 15,"italic bold"),foreground='white', padx=padx, pady=pady,
+                             text=txt, command=lambda txt=txt: self.addChar(txt))
+                btn.grid(row=row, column=col, padx=1, pady=1)
+                btn.configure(background="#999999")
+            elif txt == '0':
+                btn = Button(display, height=2, width=4,
+                font=("Helvetica", 15,"italic bold"),foreground='white', padx=padx, pady=pady,
+                             text=txt, command=lambda txt=txt: self.addChar(txt))
+                btn.grid(row=row, column=col, padx=1, pady=1)
+                btn.configure(background="#999999")
+            elif txt == '6':
+                btn = Button(display, height=2, width=4,
+                font=("Helvetica", 15,"italic bold"),foreground='white', padx=padx, pady=pady,
+                             text=txt, command=lambda txt=txt: self.addChar(txt))
+                btn.grid(row=row, column=col, padx=1, pady=1)
+                btn.configure(background="#999999")
+            elif txt == '5':
+                btn = Button(display, height=2, width=4,
+                font=("Helvetica", 15,"italic bold"),foreground='white', padx=padx, pady=pady,
+                             text=txt, command=lambda txt=txt: self.addChar(txt))
+                btn.grid(row=row, column=col, padx=1, pady=1)
+                btn.configure(background="#999999")
+            elif txt == '4':
+                btn = Button(display, height=2, width=4,
+                font=("Helvetica", 15,"italic bold"),foreground='white', padx=padx, pady=pady,
+                             text=txt, command=lambda txt=txt: self.addChar(txt))
+                btn.grid(row=row, column=col, padx=1, pady=1)
+                btn.configure(background="#999999")
+            elif txt == '3':
+                btn = Button(display, height=2, width=4,
+                font=("Helvetica", 15,"italic bold"),foreground='white', padx=padx, pady=pady,
+                             text=txt, command=lambda txt=txt: self.addChar(txt))
+                btn.grid(row=row, column=col, padx=1, pady=1)
+                btn.configure(background="#999999")
+            elif txt == '2':
+                btn = Button(display, height=2, width=4,
+                font=("Helvetica", 15,"italic bold"),foreground='white', padx=padx, pady=pady,
+                             text=txt, command=lambda txt=txt: self.addChar(txt))
+                btn.grid(row=row, column=col, padx=1, pady=1)
+                btn.configure(background="#999999")
+            elif txt == '1':
+                btn = Button(display, height=2, width=4,
+                font=("Helvetica", 15,"italic bold"),foreground='white', padx=padx, pady=pady,
+                             text=txt, command=lambda txt=txt: self.addChar(txt))
+                btn.grid(row=row, column=col, padx=1, pady=1)
+                btn.configure(background="#999999")
           
             else:
                 btn = Button(display, height=2, width=4,
